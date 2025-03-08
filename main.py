@@ -1,12 +1,12 @@
-from huffman import huffman_encode, huffman_decode
+from shannon_fano import shannon_fano_encode, shannon_fano_decode
 
 def secure_system():
     text = input("Enter the text to be encoded: ")
 
-    encoded_text, root = huffman_encode(text)
+    encoded_text, codes = shannon_fano_encode(text)
     print("Encoded string:", encoded_text)
 
-    decoded_text = huffman_decode(encoded_text, root)
+    decoded_text = shannon_fano_decode(encoded_text, codes)
 
     if text == decoded_text:
         print("Decoding successful! The original text matches the input.")
