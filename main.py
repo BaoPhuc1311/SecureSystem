@@ -1,12 +1,12 @@
-from shannon_fano import shannon_fano_encode, shannon_fano_decode
+from arithmetic import arithmetic_encode, arithmetic_decode
 
 def secure_system():
     text = input("Enter the text to be encoded: ")
 
-    encoded_text, codes = shannon_fano_encode(text)
-    print("Encoded string:", encoded_text)
+    encoded_value, intervals = arithmetic_encode(text)
+    print("Encoded value:", encoded_value)
 
-    decoded_text = shannon_fano_decode(encoded_text, codes)
+    decoded_text = arithmetic_decode(encoded_value, intervals, len(text))
 
     if text == decoded_text:
         print("Decoding successful! The original text matches the input.")
